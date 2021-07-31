@@ -1,14 +1,13 @@
 import { CollectorFilter, Message, MessageEmbed, MessageReaction, User } from "discord.js";
 import { Bot } from "../../client/Client";
 import { RunFunction } from "../../interfaces/Command";
-import { Avatar, MainStats } from "../../dbInit";
+import { AdvancedStats, Avatar, MainStats } from "../../dbInit";
 
 export const run: RunFunction = async (client: Bot, message: Message, args: string[]) => {
 	const av = await Avatar.findByPk(message.author.id)
 	if (av) {
 		return message.channel.send(`Ya tienes un avatar, su nombre es \`${av.username}\``)
 	}
-
 
 	if (!args.length) {
 		const mEmbed: MessageEmbed = new MessageEmbed()
@@ -45,7 +44,37 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 			}
 
 			if (reaction.emoji.name === '✅') {
-				Avatar.create(<Avatar>{ id: message.author.id, username: username, mainStats: { strength: 0, dexterity: 0, intelligence: 0, constitution: 0 } }, { include: [{ model: MainStats, as: 'mainStats' }] })
+				Avatar.create(
+					<Avatar>{ 
+						id: message.author.id, 
+						username: username, 
+						mainStats: { 
+							strength: 0, 
+							dexterity: 0, 
+							intelligence: 0, 
+							constitution: 0 
+						},
+						advancedStats: {
+							hp: 100,
+							mp: 100,
+							physic_dmg: 10,
+							magic_dmg: 10,
+							speed: 10,
+							evasion_pct: 1.5,
+							weight: 50
+						}
+					}, { 
+						include: [
+							{ 
+								model: MainStats, 
+								as: 'mainStats' 
+							},
+							{
+								model: AdvancedStats,
+								as: 'advancedStats'
+							}
+						]
+					})
 					.then(() => {
 						mEmbed
 							.setColor('#0099ff')

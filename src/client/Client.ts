@@ -17,7 +17,8 @@ class Bot extends Client {
 
   public async start(configOptions: ConfigOptions): Promise<void> {
     this.configOptions = configOptions;
-    this.login(configOptions.token);
+
+    this.login(this.configOptions.token);
 
     const commandFiles: string[] = await globPromise(`${__dirname}/../commands/**/*{.ts,.js}`);
     
@@ -29,8 +30,8 @@ class Bot extends Client {
     const eventFiles: string[] = await globPromise(`${__dirname}/../events/**/*{.ts,.js}`);
     eventFiles.map(async (value: string) => {
       const file: Event = await import(value);
-
       this.events.set(file.name, file);
+
       this.on(file.name, file.run.bind(null, this))
     });
   }

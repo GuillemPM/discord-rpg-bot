@@ -1,4 +1,5 @@
 import { Association, DataTypes, Model, Sequelize } from 'sequelize';
+import { AdvancedStats } from '../../AdvancedStats/Model/AdvancedStats';
 import { MainStats } from '../../MainStats/Model/MainStats';
 import { AvatarAttributes, AvatarCreationAttributes } from '../AvatarAttributes';
 
@@ -29,9 +30,11 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
     { sequelize });
   }
 
-  public readonly mainStats: MainStats
+  public readonly mainStats: MainStats;
+  public readonly advancedStats: AdvancedStats;
 
   public static associations: {
     mainStats: Association<Avatar, MainStats>;
+    advancedStats: Association<Avatar, AdvancedStats>;
   };
 };
