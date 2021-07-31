@@ -16,12 +16,9 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
   if (!n) {
     return client.logger.error(`${args[1]? '': ''} no es un numero`);
   }
-/*
-  MainStats.increment(<keyof MainStatsAttributes>args[0], {
-    where: {
-      avatar_id: message.author.id
-    }
-  })*/
+
+  
+
 };
 
 export const name: string = 'stats';
