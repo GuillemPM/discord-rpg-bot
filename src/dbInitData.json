@@ -97,6 +97,92 @@
       "name": "Hammer",
       "description": "Hammer's description",
       "itemTypeId": 1
+    },
+    {
+      "id": 3,
+      "name": "Ore",
+      "description": "Ore's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 4,
+      "name": "Ingot",
+      "description": "Ingot's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 5,
+      "name": "Wood",
+      "description": "Wood's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 6,
+      "name": "Processed wood",
+      "description": "Processed wood's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 7,
+      "name": "Bow",
+      "description": "Bow's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 8,
+      "name": "Mace",
+      "description": "Mace's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 9,
+      "name": "Spear",
+      "description": "Spear's description",
+      "itemTypeId": 1
+    },  
+    {
+      "id": 10,
+      "name": "Crossbow",
+      "description": "Crossbow's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 11,
+      "name": "Light armor",
+      "description": "Light armor's description",
+      "itemTypeId": 2
+    },
+    {
+      "id": 12,
+      "name": "Medium armor",
+      "description": "Medium armor's description",
+      "itemTypeId": 2
+    },
+    {
+      "id": 13,
+      "name": "Heavy armor",
+      "description": "Heavy armor's description",
+      "itemTypeId": 2
+    }
+  ],
+  "weaponBaseStats": [
+    {
+      "itemId": 1,
+      "physicDmg": 5,
+      "magicDmg": 0,
+      "speed": 0
+    },
+    {
+      "itemId": 7,
+      "physicDmg": 10,
+      "magicDmg": 0,
+      "speed": 0
+    },
+    {
+      "itemId": 8,
+      "physicDmg": 20,
+      "magicDmg": 0,
+      "speed": 0
     }
   ],
   "item": [
@@ -104,7 +190,7 @@
       "id": 1,
       "name": "wooden stick",
       "description": "It's a wooden Stick",
-      "itemTypeId": 4,
+      "itemTypeId": 1,
       "itemSubtypeId": 1
     },
     {
@@ -146,6 +232,27 @@
       "id": 7,
       "name": "Wooden Sword",
       "description": "Basic training sword, all heroes weild it before you",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 7,
+      "name": "Wooden Sword",
+      "description": "Basic training sword, all heroes weild it before you",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 8,
+      "name": "Iron Sword",
+      "description": "Standard sword for a militia",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 9,
+      "name": "Steel Sword",
+      "description": "A sharp and durable sword, the friend of every warrior",
       "itemTypeId": 1,
       "itemSubtypeId": 1
     }
