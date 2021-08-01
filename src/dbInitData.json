@@ -1,0 +1,153 @@
+{
+  "avatar": [
+    {
+      "id": "168135318879338497",
+      "username": "Agallas",
+      "connected": true,
+      "experience": 200,
+      "mainStats": {
+        "strength": 0,
+        "dexterity": 0,
+        "intelligence": 0,
+        "constitution": 0
+      },
+      "advancedStats": {
+        "hp": 100,
+        "mp": 100,
+        "physic_dmg": 20,
+        "magic_dmg": 20,
+        "speed": 10,
+        "evasion_pct": 1.5,
+        "weigth": 50
+      }
+    },
+    {
+      "id": "134642397530423296",
+      "username": "Pepa la puta gorda",
+      "connected": true,
+      "experience": 500,
+      "mainStats": {
+        "strength": 0,
+        "dexterity": 0,
+        "intelligence": 0,
+        "constitution": 0
+      },
+      "advancedStats": {
+        "hp": 100,
+        "mp": 100,
+        "physic_dmg": 20,
+        "magic_dmg": 20,
+        "speed": 10,
+        "evasion_pct": 1.5,
+        "weigth": 50
+      }
+    }
+  ],
+  "itemType": [
+    {
+      "id": 1,
+      "name": "Weapon",
+      "description": "Weapon's description"
+    },
+    {
+      "id": 2,
+      "name": "Armor",
+      "description": "Armor's description"
+    },
+    {
+      "id": 3,
+      "name": "Accesory",
+      "description": "Accesory's description"
+    },
+    {
+      "id": 4,
+      "name": "Material",
+      "description": "Material's description"
+    },
+    {
+      "id": 5,
+      "name": "Food",
+      "description": "Food's description"
+    },
+    {
+      "id": 6,
+      "name": "Tool",
+      "description": "Tool's description"
+    },
+    {
+      "id": 7,
+      "name": "Utility",
+      "description": "Utility's description"
+    },
+    {
+      "id": 8,
+      "name": "Key",
+      "description": "Key's description"
+    }
+  ],
+  "itemSubType": [
+    {
+      "id": 1,
+      "name": "Sword",
+      "description": "Sword's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 2,
+      "name": "Hammer",
+      "description": "Hammer's description",
+      "itemTypeId": 1
+    }
+  ],
+  "item": [
+    {
+      "id": 1,
+      "name": "wooden stick",
+      "description": "It's a wooden Stick",
+      "itemTypeId": 4,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 2,
+      "name": "slime piece",
+      "description": "An slimy piece of monster, DO NOT EAT!",
+      "itemTypeId": 4,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 3,
+      "name": "Iron Ingot",
+      "description": "A metal ingot of low quality",
+      "itemTypeId": 4,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 4,
+      "name": "Hard Wood Stick",
+      "description": "Very hard wood, good for forging resilient weapons",
+      "itemTypeId": 4,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 5,
+      "name": "Apple",
+      "description": "A red apple, it looks tasty",
+      "itemTypeId": 5,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 6,
+      "name": "Pork Meat",
+      "description": "A slice of porkchop damn Boy!",
+      "itemTypeId": 5,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 7,
+      "name": "Wooden Sword",
+      "description": "Basic training sword, all heroes weild it before you",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1
+    }
+  ]
+}
