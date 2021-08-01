@@ -7,6 +7,7 @@ import consola from "consola";
 import { ItemType } from './database/ItemType/Model/ItemType';
 import * as initData from './dbInitData.json';
 import { ItemSubtype } from './database/ItemSubtype/Model/ItemSubtype';
+import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStats';
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -18,7 +19,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item]
+const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -85,9 +86,22 @@ Item.belongsTo(ItemType, {
   targetKey: 'id'
 })
 
+Item.hasOne(WeaponBaseStats, {
+  sourceKey: 'id',
+  foreignKey: 'itemid',
+  as: 'weaponBaseStats',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+})
+
+WeaponBaseStats.belongsTo(Item, {
+  foreignKey: 'itemId',
+  targetKey: 'id'
+})
+
 sequelize.sync({ force })
   .then(async () => {
-    //console.log(JSON.parse(initData.toString()))
+
     if (force) {
       await Avatar.bulkCreate(
         JSON.parse(JSON.stringify(initData.avatar)),
@@ -114,9 +128,13 @@ sequelize.sync({ force })
       await Item.bulkCreate(
         JSON.parse(JSON.stringify(initData.item))
       )
+
+      await WeaponBaseStats.bulkCreate(
+        JSON.parse(JSON.stringify(initData.weaponBaseStats))
+      )
     }
     console.log('Database synced');
   })
   .catch(console.error);
 
-export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item }
+export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats }
