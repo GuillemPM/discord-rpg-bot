@@ -1,12 +1,5 @@
 import { Optional } from "sequelize/types";
 
-/*
-strength: number; //Fisico
-dexterity: number; //Fisico/Ranged/Velocidad/critical
-intelligence: number; //Magico/Mana
-constitution: number; //Vida/Resistencias/carga
-*/
-
 export interface AdvancedStatsAttributes {
   avatar_id: string;
   hp: number;

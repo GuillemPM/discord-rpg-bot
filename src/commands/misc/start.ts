@@ -48,17 +48,18 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 					<Avatar>{ 
 						id: message.author.id, 
 						username: username, 
+						experience: 15278,
 						mainStats: { 
 							strength: 0, 
 							dexterity: 0, 
 							intelligence: 0, 
-							constitution: 0 
+							constitution: 0
 						},
 						advancedStats: {
 							hp: 100,
 							mp: 100,
-							physic_dmg: 10,
-							magic_dmg: 10,
+							physic_dmg: 20,
+							magic_dmg: 20,
 							speed: 10,
 							evasion_pct: 1.5,
 							weight: 50

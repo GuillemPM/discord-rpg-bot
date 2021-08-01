@@ -15,20 +15,24 @@ export class MainStats extends Model<MainStatsAttributes, MainStatsCreationAttri
         primaryKey: true
       },
       strength: {
-        type: new DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
       },
       dexterity: {
-        type: new DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0
       },
       intelligence: {
-        type: new DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0
       },
       constitution: {
-        type: new DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0
       }
     },
     {

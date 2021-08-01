@@ -20,30 +20,37 @@ export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsC
       hp: {
         type: new DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 100
       },
       mp: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 100
       },
       physic_dmg: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 20
       },
       magic_dmg: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 20,
       },
       speed: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 10
       },
       evasion_pct: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 1.5
       },
       weight: {
         type: DataTypes.DECIMAL,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 50
       }
     },
     { sequelize });
