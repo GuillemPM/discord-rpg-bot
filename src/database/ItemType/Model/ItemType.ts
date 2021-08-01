@@ -1,9 +1,9 @@
 import { Association, DataTypes, Model, Sequelize } from 'sequelize';
 import { Item } from '../../Item/Model/Item';
 import { ItemSubtype } from '../../ItemSubtype/Model/ItemSubtype';
-import { ItemTypeAttributes } from '../ItemTypeAttributes';
+import { ItemTypeAttributes, ItemTypeCreationAttributes } from '../ItemTypeAttributes';
 
-export class ItemType extends Model<ItemTypeAttributes> implements ItemType {
+export class ItemType extends Model<ItemTypeAttributes, ItemTypeCreationAttributes> implements ItemTypeAttributes {
   public id!: number;
   public name!: string;
   public description!: string;
@@ -29,8 +29,8 @@ export class ItemType extends Model<ItemTypeAttributes> implements ItemType {
     })
   }
 
-  public readonly itemSubtype: ItemSubtype;
-  public readonly item: Item;
+  public readonly itemSubtype: ItemSubtype[];
+  public readonly item: Item[];
 
   public static associations: {
     itemSubtype: Association<ItemType, ItemSubtype>;

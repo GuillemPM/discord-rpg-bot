@@ -35,7 +35,7 @@ export class ItemSubtype extends Model<ItemSubtypeAttributes, ItemSubtypeCreatio
   }
 
   public readonly itemType: ItemType;
-  public readonly item: Item;
+  public readonly item: Item[];
 
   public static associations: {
     itemType: Association<ItemSubtype, ItemType>

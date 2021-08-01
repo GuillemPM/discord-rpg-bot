@@ -7,4 +7,4 @@ export interface WeaponBaseStatsAttributes {
   speed: number;
 }
 
-export interface WeaponsBaseStatsAttributes extends Optional<WeaponBaseStatsAttributes, null> { }
+export interface WeaponBaseStatsCreationAttributes extends Optional<WeaponBaseStatsAttributes, null> { }
