@@ -58,10 +58,10 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 						advancedStats: {
 							hp: 100,
 							mp: 100,
-							physic_dmg: 20,
-							magic_dmg: 20,
+							physicDmg: 20,
+							magicDmg: 20,
 							speed: 10,
-							evasion_pct: 1.5,
+							evasionPct: 1.5,
 							weight: 50
 						}
 					}, { 

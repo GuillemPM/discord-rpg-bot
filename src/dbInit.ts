@@ -26,27 +26,27 @@ const force: boolean = process.argv.includes('--force') || process.argv.includes
 
 Avatar.hasOne(MainStats, {
   sourceKey: 'id',
-  foreignKey: 'avatar_id',
+  foreignKey: 'avatarId',
   as: 'mainStats',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE'
 });
 
 MainStats.belongsTo(Avatar, {
-  foreignKey: 'avatar_id',
+  foreignKey: 'avatarId',
   targetKey: 'id'
 })
 
 Avatar.hasOne(AdvancedStats, {
   sourceKey: 'id',
-  foreignKey: 'avatar_id',
+  foreignKey: 'avatarId',
   as: 'advancedStats',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE'
 });
 
 AdvancedStats.belongsTo(Avatar, {
-  foreignKey: 'avatar_id',
+  foreignKey: 'avatarId',
   targetKey: 'id'
 })
 
@@ -88,7 +88,7 @@ Item.belongsTo(ItemType, {
 
 Item.hasOne(WeaponBaseStats, {
   sourceKey: 'id',
-  foreignKey: 'itemid',
+  foreignKey: 'itemId',
   as: 'weaponBaseStats',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE'

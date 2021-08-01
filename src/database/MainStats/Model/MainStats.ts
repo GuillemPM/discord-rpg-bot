@@ -2,7 +2,7 @@ import { Association, DataTypes, Model, Sequelize } from 'sequelize';
 import { MainStatsAttributes, MainStatsCreationAttributes } from '../MainStatsAttributes';
 
 export class MainStats extends Model<MainStatsAttributes, MainStatsCreationAttributes> implements MainStatsAttributes {
-  public avatar_id!: string;
+  public avatarId!: string;
   public strength!: number;
   public dexterity!: number;
   public intelligence!: number;
@@ -10,7 +10,7 @@ export class MainStats extends Model<MainStatsAttributes, MainStatsCreationAttri
 
   public static initialize(sequelize: Sequelize) {
     this.init({
-      avatar_id: {
+      avatarId: {
         type: DataTypes.STRING,
         primaryKey: true
       },

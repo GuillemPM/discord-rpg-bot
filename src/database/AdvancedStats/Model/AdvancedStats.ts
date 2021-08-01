@@ -2,18 +2,18 @@ import { Association, DataTypes, Model, Sequelize } from 'sequelize';
 import { AdvancedStatsAttributes, AdvancedStatsCreationAttributes } from '../AdvancedStatsAttributes';
 
 export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsCreationAttributes> implements AdvancedStatsAttributes {
-  public avatar_id!: string;
+  public avatarId!: string;
   public hp!: number;
   public mp!: number;
-  public physic_dmg!: number;
-  public magic_dmg!: number;
+  public physicDmg!: number;
+  public magicDmg!: number;
   public speed!: number;
-  public evasion_pct!: number;
+  public evasionPct!: number;
   public weight!: number;
 
   public static initialize(sequelize: Sequelize) {
     this.init({
-      avatar_id: {
+      avatarId: {
         type: DataTypes.STRING,
         primaryKey: true,
       },
@@ -27,12 +27,12 @@ export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsC
         allowNull: false,
         defaultValue: 100
       },
-      physic_dmg: {
+      physicDmg: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 20
       },
-      magic_dmg: {
+      magicDmg: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 20,
@@ -42,7 +42,7 @@ export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsC
         allowNull: false,
         defaultValue: 10
       },
-      evasion_pct: {
+      evasionPct: {
         type: DataTypes.FLOAT,
         allowNull: false,
         defaultValue: 1.5
