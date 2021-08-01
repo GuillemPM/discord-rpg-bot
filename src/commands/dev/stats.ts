@@ -31,7 +31,7 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
   const attributeName: string = args[0]
   const attributePoints: number = Number.parseInt(args[1])
 
-  if (!Object.keys(MainStats.rawAttributes).filter(key => key !== 'avatar_id').includes(attributeName)) {
+  if (!Object.keys(MainStats.rawAttributes).filter(key => key !== 'avatarId').includes(attributeName)) {
     return message.channel.send(`El atributo ${attributeName} no existe puto bobo`)
   }
 
@@ -44,7 +44,7 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
   MainStats.increment(<keyof MainStatsAttributes>attributeName, {
     by: attributePoints,
     where: {
-      avatar_id: message.author.id
+      avatarId: message.author.id
     }
   })
     .then(() => {
@@ -52,7 +52,7 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
         AdvancedStats.increment(key, {
           by: attributePoints * value,
           where: {
-            avatar_id: message.author.id
+            avatarId: message.author.id
           }
         })
       })

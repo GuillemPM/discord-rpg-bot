@@ -1,13 +1,13 @@
 import { Optional } from "sequelize/types";
 
 export interface AdvancedStatsAttributes {
-  avatar_id: string;
+  avatarId: string;
   hp: number;
   mp: number;
-  physic_dmg: number;
-  magic_dmg: number;
+  physicDmg: number;
+  magicDmg: number;
   speed: number;
-  evasion_pct: number;
+  evasionPct: number;
   weight: number;
 }
 

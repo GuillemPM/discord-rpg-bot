@@ -1,7 +1,7 @@
 import { Optional } from "sequelize/types";
 
 export interface MainStatsAttributes {
-  avatar_id: string;
+  avatarId: string;
   strength: number;
   dexterity: number;
   intelligence: number;

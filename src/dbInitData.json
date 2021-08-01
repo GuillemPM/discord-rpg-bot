@@ -14,10 +14,10 @@
       "advancedStats": {
         "hp": 100,
         "mp": 100,
-        "physic_dmg": 20,
-        "magic_dmg": 20,
+        "physicDmg": 20,
+        "magicDmg": 20,
         "speed": 10,
-        "evasion_pct": 1.5,
+        "evasionPct": 1.5,
         "weigth": 50
       }
     },
@@ -35,10 +35,10 @@
       "advancedStats": {
         "hp": 100,
         "mp": 100,
-        "physic_dmg": 20,
-        "magic_dmg": 20,
+        "physicDmg": 20,
+        "magicDmg": 20,
         "speed": 10,
-        "evasion_pct": 1.5,
+        "evasionPct": 1.5,
         "weigth": 50
       }
     }
@@ -226,13 +226,6 @@
       "name": "Pork Meat",
       "description": "A slice of porkchop damn Boy!",
       "itemTypeId": 5,
-      "itemSubtypeId": 1
-    },
-    {
-      "id": 7,
-      "name": "Wooden Sword",
-      "description": "Basic training sword, all heroes weild it before you",
-      "itemTypeId": 1,
       "itemSubtypeId": 1
     },
     {
