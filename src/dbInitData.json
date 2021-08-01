@@ -139,7 +139,7 @@
       "name": "Spear",
       "description": "Spear's description",
       "itemTypeId": 1
-    },  
+    },
     {
       "id": 10,
       "name": "Crossbow",
@@ -248,6 +248,23 @@
       "description": "A sharp and durable sword, the friend of every warrior",
       "itemTypeId": 1,
       "itemSubtypeId": 1
+    }
+  ],
+  "gearInventory": [
+    {
+      "avatarId": "168135318879338497",
+      "itemId": 9,
+      "instanceItemGuid": "8ea3d664-81fd-4b39-9021-aff476682e9a"
+    },
+    {
+      "avatarId": "168135318879338497",
+      "itemId": 8,
+      "instanceItemGuid": "137d6c8b-a5bf-4860-976e-c61d65e5a504"
+    },
+    {
+      "avatarId": "134642397530423296",
+      "itemId": 8,
+      "instanceItemGuid": "85798a2c-3475-4117-b5ab-c5be8dabe063"
     }
   ]
 }

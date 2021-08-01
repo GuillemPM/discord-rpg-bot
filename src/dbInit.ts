@@ -8,6 +8,8 @@ import { ItemType } from './database/ItemType/Model/ItemType';
 import * as initData from './dbInitData.json';
 import { ItemSubtype } from './database/ItemSubtype/Model/ItemSubtype';
 import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStats';
+import { randomUUID } from 'crypto';
+import { GearInventory } from './database/GearInventory/Model/GearInventory';
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -19,7 +21,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats]
+const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, GearInventory]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -99,6 +101,33 @@ WeaponBaseStats.belongsTo(Item, {
   targetKey: 'id'
 })
 
+Avatar.hasMany(GearInventory, {
+  sourceKey: 'id',
+  foreignKey: 'avatarId',
+  as: 'gearInventory',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+})
+
+GearInventory.belongsTo(Avatar, {
+  foreignKey: 'avatarId',
+  targetKey: 'id'
+});
+
+Item.hasMany(GearInventory, {
+  sourceKey: 'id',
+  foreignKey: 'itemId',
+  as: 'gearInventory',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+})
+
+GearInventory.belongsTo(Item, {
+  foreignKey: 'itemId',
+  targetKey: 'id',
+  as: 'item'
+})
+
 sequelize.sync({ force })
   .then(async () => {
 
@@ -132,9 +161,13 @@ sequelize.sync({ force })
       await WeaponBaseStats.bulkCreate(
         JSON.parse(JSON.stringify(initData.weaponBaseStats))
       )
+
+      await GearInventory.bulkCreate(
+        JSON.parse(JSON.stringify(initData.gearInventory))
+      )
     }
     console.log('Database synced');
   })
   .catch(console.error);
 
-export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats }
+export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, GearInventory }
