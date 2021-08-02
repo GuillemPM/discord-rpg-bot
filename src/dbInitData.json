@@ -205,7 +205,7 @@
       "name": "Iron Ingot",
       "description": "A metal ingot of low quality",
       "itemTypeId": 4,
-      "itemSubtypeId": 1
+      "itemSubtypeId": 4
     },
     {
       "id": 4,
@@ -248,6 +248,13 @@
       "description": "A sharp and durable sword, the friend of every warrior",
       "itemTypeId": 1,
       "itemSubtypeId": 1
+    },
+    {
+      "id": 10,
+      "name": "Steel War Hammer",
+      "description": "A mass of steel attached to a stick, crush your enemies with might",
+      "itemTypeId": 1,
+      "itemSubtypeId": 2
     }
   ],
   "gearInventory": [
@@ -259,6 +266,16 @@
     {
       "avatarId": "168135318879338497",
       "itemId": 8,
+      "instanceItemGuid": "137d6c8b-a5bf-4860-976e-c61d65e5a504"
+    },
+    {
+      "avatarId": "168135318879338497",
+      "itemId": 10,
+      "instanceItemGuid": "137d6c8b-a5bf-4860-976e-c61d65e5a504"
+    },
+    {
+      "avatarId": "168135318879338497",
+      "itemId": 3,
       "instanceItemGuid": "137d6c8b-a5bf-4860-976e-c61d65e5a504"
     },
     {
