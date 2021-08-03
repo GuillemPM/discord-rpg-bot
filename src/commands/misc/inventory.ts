@@ -52,7 +52,6 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
             
           }else{
             a++
-            console.log(a)
           }
         })
       }else{
