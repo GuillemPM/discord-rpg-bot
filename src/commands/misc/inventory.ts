@@ -43,17 +43,18 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
     if(args[1]){
       const ind: number = parseInt(args[1])
       if(ind <= inventory.length){
+        console.log(inventory[ind-1])
         //Iteramos por todos los objetos en Gear Inventory hasta que en contramos el nuestro. <-- Guilleeeeeeeeeeee AUXILI!
-        let a = 1
-        inventory.forEach((i) => {
-          if(a == ind){
+        //let a = 1
+        //*inventory.forEach((i) => {
+          /*if(a == ind){
             //En cuanto llegamos a la iteracion que nos interesa devolvemos un mensaje seleccionando los stats de las armas.
             const ite = <GearInventory>i.get({plain: true})
             
           }else{
             a++
           }
-        })
+        })*/
       }else{
         //En caso de que el numero que de el usuario sea mas grande que la cantidad total de Items en el inventario.
         const msg = new MessageEmbed()
