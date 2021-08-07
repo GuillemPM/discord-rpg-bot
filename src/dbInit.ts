@@ -8,8 +8,7 @@ import { ItemType } from './database/ItemType/Model/ItemType';
 import * as initData from './dbInitData.json';
 import { ItemSubtype } from './database/ItemSubtype/Model/ItemSubtype';
 import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStats';
-import { randomUUID } from 'crypto';
-import { GearInventory } from './database/GearInventory/Model/GearInventory';
+import { Inventory } from './database/Inventory/Model/Inventory';
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -21,7 +20,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, GearInventory]
+const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -85,7 +84,8 @@ Item.belongsTo(ItemSubtype, {
 
 Item.belongsTo(ItemType, {
   foreignKey: 'itemTypeId',
-  targetKey: 'id'
+  targetKey: 'id',
+  as: 'itemType'
 })
 
 Item.hasOne(WeaponBaseStats, {
@@ -101,28 +101,28 @@ WeaponBaseStats.belongsTo(Item, {
   targetKey: 'id'
 })
 
-Avatar.hasMany(GearInventory, {
+Avatar.hasMany(Inventory, {
   sourceKey: 'id',
   foreignKey: 'avatarId',
-  as: 'gearInventory',
+  as: 'inventory',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE'
 })
 
-GearInventory.belongsTo(Avatar, {
+Inventory.belongsTo(Avatar, {
   foreignKey: 'avatarId',
   targetKey: 'id'
 });
 
-Item.hasMany(GearInventory, {
+Item.hasMany(Inventory, {
   sourceKey: 'id',
   foreignKey: 'itemId',
-  as: 'gearInventory',
+  as: 'inventory',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE'
 })
 
-GearInventory.belongsTo(Item, {
+Inventory.belongsTo(Item, {
   foreignKey: 'itemId',
   targetKey: 'id',
   as: 'item'
@@ -162,12 +162,12 @@ sequelize.sync({ force })
         JSON.parse(JSON.stringify(initData.weaponBaseStats))
       )
 
-      await GearInventory.bulkCreate(
-        JSON.parse(JSON.stringify(initData.gearInventory))
+      await Inventory.bulkCreate(
+        JSON.parse(JSON.stringify(initData.inventory))
       )
     }
     console.log('Database synced');
   })
   .catch(console.error);
 
-export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, GearInventory }
+export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory }

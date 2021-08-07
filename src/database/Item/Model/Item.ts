@@ -1,4 +1,5 @@
 import { Association, DataTypes, Model, Sequelize } from 'sequelize';
+import { ItemType } from '../../ItemType/Model/ItemType';
 import { ItemAttributes, ItemCreationAttributes } from '../ItemAttributes';
 
 export class Item extends Model<ItemAttributes, ItemCreationAttributes> implements ItemAttributes {
@@ -8,7 +9,6 @@ export class Item extends Model<ItemAttributes, ItemCreationAttributes> implemen
   public itemTypeId!: number;
   public itemSubtypeId!: number;
   
-
   public static initialize(sequelize: Sequelize) {
     this.init({
       id: {
@@ -37,4 +37,10 @@ export class Item extends Model<ItemAttributes, ItemCreationAttributes> implemen
       sequelize
     })
   }
+
+  public readonly itemType: ItemType;
+
+  public static associations: {
+    itemType: Association<Item, ItemType>;
+  };
 };
