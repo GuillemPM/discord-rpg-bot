@@ -16,7 +16,7 @@ export class Inventory extends Model<InventoryAttributes, InventoryCreationAttri
         primaryKey: true
       },
       avatarId:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true
       },
       itemId: {

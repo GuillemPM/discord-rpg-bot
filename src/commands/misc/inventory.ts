@@ -87,21 +87,27 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
   if (args[0] == 'detail') {
     //Controlamos que se pasen dos argumentos, el detail y un numero.
     if (args[1]) {
-      const itemNo: number = parseInt(args[1])
 
-      if (itemNo) {
-        const item: Item = (<Inventory>inventory.filter(v => v.id == itemNo)[0].get({plain: true})).item;
-        //const item: Item = (<Inventory>inventory[itemNo - 1].get({ plain: true })).item;
+      //TODO: Review this bullshitttttttttttttttt
+      const invId: number = parseInt(args[1])
+      inventory.map(v => console.log(v))
+      //console.log(inventory.length)
+
+      if (invId) {
+        console.log(inventory.filter(v => v.id === invId));
+
+        const invRow = <Inventory>inventory.filter(v => v.id === invId)[0].get({plain: true});
+        console.log(invRow)
         const msg = new MessageEmbed()
           .setColor('#0099ff')
           .setTitle('Revisa tus objetos')
           .setURL('https://discord.com')
           .setDescription(`Hola \`${avatar.username}\`,\nthis is your inventory:`)
           .addFields(
-            { name: 'Type', value: item.itemType.name, inline: true },
-            { name: 'Name', value: `(#${itemNo}) ${item.name}`, inline: true },
+            { name: 'Type', value: invRow.item.itemType.name, inline: true },
+            { name: 'Name', value: `(#${invRow.id}) ${invRow.item.name}`, inline: true },
             // { name: 'Quantity', value: item.quantity, inline: true},
-            { name: 'Description', value: item.description }
+            { name: 'Description', value: invRow.item.description }
 
           )
         return message.channel.send(msg)
