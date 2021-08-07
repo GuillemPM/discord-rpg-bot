@@ -7,5 +7,7 @@ export interface RunFunction {
 
 export interface Command {
   name: string,
-  run: RunFunction
+  run: RunFunction,
+  description: string,
+  permisions: number,
 }

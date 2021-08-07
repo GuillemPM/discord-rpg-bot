@@ -49,4 +49,5 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 };
 
 export const name: string = 'reset';
-export const description: string = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaiuda!';
+export const description: string = 'Use r!reset to re-establish connection to the world again!';
+export const permisions: number = 0;
