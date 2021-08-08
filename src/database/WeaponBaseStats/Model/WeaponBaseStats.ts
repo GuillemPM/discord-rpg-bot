@@ -1,8 +1,8 @@
 import { Association, DataTypes, Model, Sequelize } from 'sequelize';
 import { Item } from '../../Item/Model/Item';
-import { WeaponBaseStatsAttributes } from '../WeaponBaseStatsAttributes';
+import { WeaponBaseStatsAttributes, WeaponBaseStatsCreationAttributes } from '../WeaponBaseStatsAttributes';
 
-export class WeaponBaseStats extends Model<WeaponBaseStatsAttributes> implements WeaponBaseStatsAttributes {
+export class WeaponBaseStats extends Model<WeaponBaseStatsAttributes, WeaponBaseStatsCreationAttributes> implements WeaponBaseStatsAttributes {
   public itemId!: number;
   public physicDmg!: number;
   public magicDmg!: number;
