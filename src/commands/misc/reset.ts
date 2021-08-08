@@ -50,3 +50,4 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
 export const name: string = 'reset';
 export const description: string = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaiuda!';
+export const aliases: string[] = ['r', 'res'];

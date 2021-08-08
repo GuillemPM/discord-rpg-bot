@@ -8,8 +8,9 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
   if (!message.content.startsWith(client.configOptions.prefix) || message.author.bot) return;
 
   const args: string[] = message.content.slice(client.configOptions.prefix.length).trim().split(/ +/g);
-  const command: Command = client.commands.get(args.shift().toLowerCase());
-
+  const commandName: string = args.shift().toLowerCase();
+  const command: Command = client.commands.get(commandName) || client.commands.find(command => command.aliases && command.aliases.includes(commandName));
+ 
   if (!command) return;
 
   const avatar: Avatar = await Avatar.findByPk(message.author.id);

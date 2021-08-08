@@ -27,7 +27,6 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
       }
     ], raw: false
   })).map(v => <Inventory>v.get({plain: true}))
-  console.log(inventory);
   
   const itemsPerPage = 15;
   const totalPages = Math.ceil(inventory.length / itemsPerPage);
@@ -118,3 +117,4 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 };
 
 export const name: string = 'inventory';
+export const aliases: string[] = ['inv'];
