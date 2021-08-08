@@ -1,10 +1,8 @@
 import { Message, MessageEmbed } from "discord.js";
 import { Bot } from "../../client/Client";
 import { RunFunction } from "../../interfaces/Command";
-import Table from "easy-table"
 
 export const run: RunFunction = async (client: Bot, message: Message) => {
-  const table = new Table();
   let i: any = 0
   const msg = new MessageEmbed
   msg
@@ -13,12 +11,12 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 	  .setURL('https://discord.com')
 
   for(i in client.commands.array()){
-    if(client.commands.array()[i].permisions != 1){
-      msg.addField(`${client.commands.array()[i].name}`,`${client.commands.array()[i].description}`)
+    const commnd = client.commands.array()[i]
+    if(commnd.permisions != 1){
+      msg.addField(`${commnd.name}`, `${commnd.description} \n Aliases: ${commnd.aliases? commnd.aliases.join(', ') :'No Aliases available'}`)
     }
   }
   return message.channel.send(msg)
-  //const msg: Message = await message.channel.send(`${table.print()}`)
 }
 
 export const name: string = 'help';
