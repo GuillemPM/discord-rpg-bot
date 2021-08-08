@@ -270,6 +270,41 @@
       "description": "A mass of steel attached to a stick, crush your enemies with might",
       "itemTypeId": 8,
       "itemSubtypeId": 2
+    },
+    {
+      "id": 12,
+      "name": "Rookie Helmet",
+      "description": "A rookie helmet for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11
+    },
+    {
+      "id": 13,
+      "name": "Rookie plate armor",
+      "description": "A armor for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11
+    },
+    {
+      "id": 14,
+      "name": "Rookie guantlets",
+      "description": "A rookie guantlet for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11
+    },
+    {
+      "id": 15,
+      "name": "Rookie plate pants",
+      "description": "A rookie pants for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11
+    },
+    {
+      "id": 16,
+      "name": "Rookie trining boots",
+      "description": "A rookie's Boots for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11
     }
   ],
   "inventory": [
@@ -299,6 +334,41 @@
       "avatarId": "168135318879338497",
       "itemId": 3,
       "instanceItemGuid": "6019d271-03ab-42e3-bc42-95a66c4b1f67",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "avatarId": "168135318879338497",
+      "itemId": 12,
+      "instanceItemGuid": "493198d4-045f-4d0c-b5e4-cf9eb006c8e5",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "avatarId": "168135318879338497",
+      "itemId": 13,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "avatarId": "168135318879338497",
+      "itemId": 14,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "avatarId": "168135318879338497",
+      "itemId": 15,
+      "instanceItemGuid": "98980763-7157-4cf4-b987-3df456908306",
+      "quantity": 1
+    },
+    {
+      "id": 9,
+      "avatarId": "168135318879338497",
+      "itemId": 16,
+      "instanceItemGuid": "7151d97b-97ee-420d-882a-4c9db1b2d9b5",
       "quantity": 1
     },
     {
@@ -398,6 +468,48 @@
       "itemId": 7,
       "instanceItemGuid": "",
       "quantity": 63
+    },
+    {
+      "id": 15,
+      "avatarId": "134642397530423296",
+      "itemId": 7,
+      "instanceItemGuid": "",
+      "quantity": 63
+    },
+    {
+      "id": 16,
+      "avatarId": "134642397530423296",
+      "itemId": 12,
+      "instanceItemGuid": "493198d4-045f-4d0c-b5e4-cf9eb006c8e5",
+      "quantity": 1
+    },
+    {
+      "id": 17,
+      "avatarId": "134642397530423296",
+      "itemId": 13,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1
+    },
+    {
+      "id": 18,
+      "avatarId": "134642397530423296",
+      "itemId": 14,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1
+    },
+    {
+      "id": 19,
+      "avatarId": "134642397530423296",
+      "itemId": 15,
+      "instanceItemGuid": "98980763-7157-4cf4-b987-3df456908306",
+      "quantity": 1
+    },
+    {
+      "id": 20,
+      "avatarId": "134642397530423296",
+      "itemId": 16,
+      "instanceItemGuid": "7151d97b-97ee-420d-882a-4c9db1b2d9b5",
+      "quantity": 1
     }
   ]
 }
