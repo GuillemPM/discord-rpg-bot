@@ -9,6 +9,8 @@ import * as initData from './dbInitData.json';
 import { ItemSubtype } from './database/ItemSubtype/Model/ItemSubtype';
 import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStats';
 import { Inventory } from './database/Inventory/Model/Inventory';
+import { Gear } from './database/Gear/Model/Gear';
+import { BodyPart } from './database/BodyPart/Model/BodyPart';
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -20,7 +22,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory]
+const models = [BodyPart, Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory, Gear]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -132,6 +134,10 @@ sequelize.sync({ force })
   .then(async () => {
 
     if (force) {
+      await BodyPart.bulkCreate(
+        JSON.parse(JSON.stringify(initData.bodyPart))
+      )
+
       await Avatar.bulkCreate(
         JSON.parse(JSON.stringify(initData.avatar)),
         {
@@ -170,4 +176,15 @@ sequelize.sync({ force })
   })
   .catch(console.error);
 
-export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory }
+export { 
+  Avatar, 
+  MainStats, 
+  AdvancedStats, 
+  ItemType, 
+  ItemSubtype, 
+  Item, 
+  WeaponBaseStats, 
+  Inventory, 
+  Gear,
+  BodyPart
+}

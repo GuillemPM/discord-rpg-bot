@@ -1,4 +1,5 @@
 import { Association, DataTypes, Model, Sequelize } from 'sequelize';
+import { BodyPart } from '../../BodyPart/Model/BodyPart';
 import { ItemSubtype } from '../../ItemSubtype/Model/ItemSubtype';
 import { ItemType } from '../../ItemType/Model/ItemType';
 import { ItemAttributes, ItemCreationAttributes } from '../ItemAttributes';
@@ -9,6 +10,7 @@ export class Item extends Model<ItemAttributes, ItemCreationAttributes> implemen
   public description!: string;
   public itemTypeId!: number;
   public itemSubtypeId!: number;
+  public bodyPartId!: number;
   
   public static initialize(sequelize: Sequelize) {
     this.init({
@@ -31,6 +33,13 @@ export class Item extends Model<ItemAttributes, ItemCreationAttributes> implemen
       itemSubtypeId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+      },
+      bodyPartId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: BodyPart,
+          key: 'id'
+        }     
       }
     },
     {
@@ -41,9 +50,11 @@ export class Item extends Model<ItemAttributes, ItemCreationAttributes> implemen
 
   public readonly itemType: ItemType;
   public readonly itemSubtype: ItemSubtype;
+  public readonly bodyPart: BodyPart;
 
   public static associations: {
     itemType: Association<Item, ItemType>
     itemSubtype: Association<Item, ItemSubtype>;
+    bodyPart: Association<Item, BodyPart>
   };
 };

@@ -1,5 +1,6 @@
 import { Association, DataTypes, HasManyCreateAssociationMixin, Model, Sequelize } from 'sequelize';
 import { AdvancedStats } from '../../AdvancedStats/Model/AdvancedStats';
+import { Gear } from '../../Gear/Model/Gear';
 import { MainStats } from '../../MainStats/Model/MainStats';
 import { AvatarAttributes, AvatarCreationAttributes } from '../AvatarAttributes';
 
@@ -52,9 +53,11 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
   
   public readonly mainStats: MainStats;
   public readonly advancedStats: AdvancedStats;
+  public readonly gear: Gear;
 
   public static associations: {
     mainStats: Association<Avatar, MainStats>;
     advancedStats: Association<Avatar, AdvancedStats>;
+    gear: Association<Avatar, Gear>;
   };
 };

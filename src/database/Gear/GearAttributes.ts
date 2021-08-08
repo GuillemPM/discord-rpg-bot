@@ -1,7 +1,10 @@
 import { Optional } from "sequelize/types";
+import { Gear } from "./Model/Gear";
 
 export interface GearAttributes {
   avatarId: string;
+  leftHandWeapon: string;
+  rightHandWeapon: string;
   head: string;
   chest: string;
   hands: string;
@@ -15,4 +18,4 @@ export interface GearAttributes {
   waist: string;
 }
 
-export interface GearCreationAttributes extends Optional<GearAttributes, null> { }
+export interface GearCreationAttributes extends Optional<GearAttributes, Exclude<keyof GearAttributes, 'avatarId'>> { }
