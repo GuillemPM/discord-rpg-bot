@@ -38,7 +38,7 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 			if (reaction.emoji.name === '❌') {
 				mEmbed
 					.setColor('#0099ff')
-					.setTitle('Start your adventure!')
+					.setTitle(description)
 					.setURL('https://discord.com')
 					.setDescription('Vaya, ¿te has equivocado de nombre? ¿Cómo se llamará entonces?\n\nUtiliza el comando `r!start <<nombre>>` para continuar');
 			}
@@ -91,5 +91,4 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 }
 
 export const name: string = 'start';
-export const description: string = 'Use r!start to start for first time your journey!';
-export const permisions: number = 0;
+export const description: string = 'Comienza tu aventura!';

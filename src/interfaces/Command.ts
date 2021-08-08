@@ -7,12 +7,6 @@ export interface RunFunction {
 
 export interface Command {
   name: string,
-<<<<<<< HEAD
   aliases: string[],
   run: RunFunction
-=======
-  run: RunFunction,
-  description: string,
-  permisions: number,
->>>>>>> discord-rpg-bot-base/feature-help-command
 }

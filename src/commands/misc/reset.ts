@@ -49,10 +49,5 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 };
 
 export const name: string = 'reset';
-<<<<<<< HEAD
 export const description: string = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaiuda!';
 export const aliases: string[] = ['r', 'res'];
-=======
-export const description: string = 'Use r!reset to re-establish connection to the world again!';
-export const permisions: number = 0;
->>>>>>> discord-rpg-bot-base/feature-help-command

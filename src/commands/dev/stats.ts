@@ -62,4 +62,3 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 
 export const name: string = 'stats';
 export const description: string = 'Asigna tus stats!';
-export const permisions: number = 1;
