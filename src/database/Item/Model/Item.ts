@@ -10,7 +10,6 @@ export class Item extends Model<ItemAttributes, ItemCreationAttributes> implemen
   public itemTypeId!: number;
   public itemSubtypeId!: number;
   
-
   public static initialize(sequelize: Sequelize) {
     this.init({
       id: {
