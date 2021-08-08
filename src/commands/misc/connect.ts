@@ -22,3 +22,4 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
 export const name: string = 'connect';
 export const description: string = 'Conéctate al mundo!';
+export const aliases: string[] = ['c', 'con'];

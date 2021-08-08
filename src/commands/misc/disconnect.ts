@@ -22,3 +22,4 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
 export const name: string = 'disconnect';
 export const description: string = 'Desconéctate del mundo!';
+export const aliases: string[] = ['dc', 'dcon', 'disc'];
