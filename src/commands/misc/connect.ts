@@ -21,5 +21,10 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 };
 
 export const name: string = 'connect';
+<<<<<<< HEAD
 export const description: string = 'Conéctate al mundo!';
 export const aliases: string[] = ['c', 'con'];
+=======
+export const description: string = 'Use the r!connect command to connect to the world! You need to connect first to start or resume yor adventure!';
+export const permisions: number = 0;
+>>>>>>> discord-rpg-bot-base/feature-help-command
