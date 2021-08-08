@@ -118,3 +118,5 @@ export const run: RunFunction = async (client: Bot, message: Message, args: stri
 
 export const name: string = 'inventory';
 export const aliases: string[] = ['inv'];
+export const description: string = 'Use r!inventory to check yout character inventory detail <Item Number>';
+export const permisions: number = 0;
