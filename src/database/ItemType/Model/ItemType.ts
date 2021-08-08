@@ -7,6 +7,7 @@ export class ItemType extends Model<ItemTypeAttributes, ItemTypeCreationAttribut
   public id!: number;
   public name!: string;
   public description!: string;
+  public icon!: string;
 
   public static initialize(sequelize: Sequelize) {
     this.init({
@@ -21,6 +22,10 @@ export class ItemType extends Model<ItemTypeAttributes, ItemTypeCreationAttribut
       description: {
         type: DataTypes.TEXT,
         allowNull: false,
+      },
+      icon: {
+        type: DataTypes.STRING(20),
+        allowNull: false
       }
     },
     {

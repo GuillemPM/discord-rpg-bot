@@ -8,6 +8,7 @@ import { ItemType } from './database/ItemType/Model/ItemType';
 import * as initData from './dbInitData.json';
 import { ItemSubtype } from './database/ItemSubtype/Model/ItemSubtype';
 import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStats';
+import { Inventory } from './database/Inventory/Model/Inventory';
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -19,7 +20,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats]
+const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -83,7 +84,8 @@ Item.belongsTo(ItemSubtype, {
 
 Item.belongsTo(ItemType, {
   foreignKey: 'itemTypeId',
-  targetKey: 'id'
+  targetKey: 'id',
+  as: 'itemType'
 })
 
 Item.hasOne(WeaponBaseStats, {
@@ -97,6 +99,33 @@ Item.hasOne(WeaponBaseStats, {
 WeaponBaseStats.belongsTo(Item, {
   foreignKey: 'itemId',
   targetKey: 'id'
+})
+
+Avatar.hasMany(Inventory, {
+  sourceKey: 'id',
+  foreignKey: 'avatarId',
+  as: 'inventory',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+})
+
+Inventory.belongsTo(Avatar, {
+  foreignKey: 'avatarId',
+  targetKey: 'id'
+});
+
+Item.hasMany(Inventory, {
+  sourceKey: 'id',
+  foreignKey: 'itemId',
+  as: 'inventory',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE'
+})
+
+Inventory.belongsTo(Item, {
+  foreignKey: 'itemId',
+  targetKey: 'id',
+  as: 'item'
 })
 
 sequelize.sync({ force })
@@ -132,9 +161,13 @@ sequelize.sync({ force })
       await WeaponBaseStats.bulkCreate(
         JSON.parse(JSON.stringify(initData.weaponBaseStats))
       )
+
+      await Inventory.bulkCreate(
+        JSON.parse(JSON.stringify(initData.inventory))
+      )
     }
     console.log('Database synced');
   })
   .catch(console.error);
 
-export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats }
+export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory }
