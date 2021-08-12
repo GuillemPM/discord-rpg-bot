@@ -5,6 +5,8 @@ export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsC
   public avatarId!: string;
   public hp!: number;
   public mp!: number;
+  public missingHp: number;
+  public missingMp: number;
   public physicDmg!: number;
   public magicDmg!: number;
   public speed!: number;
@@ -26,6 +28,16 @@ export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsC
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 100
+      },
+      missingHp: {
+        type: new DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
+      missingMp: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
       },
       physicDmg: {
         type: DataTypes.INTEGER,

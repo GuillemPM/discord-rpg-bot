@@ -4,7 +4,7 @@
       "id": "168135318879338497",
       "username": "Agallas",
       "connected": true,
-      "experience": 200,
+      "experience": 8501,
       "mainStats": {
         "strength": 0,
         "dexterity": 0,
@@ -14,6 +14,8 @@
       "advancedStats": {
         "hp": 100,
         "mp": 100,
+        "misingHp": 0,
+        "missingMp": 0,
         "physicDmg": 20,
         "magicDmg": 20,
         "speed": 10,
@@ -35,6 +37,8 @@
       "advancedStats": {
         "hp": 100,
         "mp": 100,
+        "misingHp": 0,
+        "missingMp": 0,
         "physicDmg": 20,
         "magicDmg": 20,
         "speed": 10,
