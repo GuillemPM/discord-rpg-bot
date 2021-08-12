@@ -1,0 +1,124 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "wooden stick",
+      "description": "It's a wooden Stick",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 2,
+      "name": "slime piece",
+      "description": "An slimy piece of monster, DO NOT EAT!",
+      "itemTypeId": 4,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 3,
+      "name": "Iron Ingot",
+      "description": "A metal ingot of low quality",
+      "itemTypeId": 4,
+      "itemSubtypeId": 4
+    },
+    {
+      "id": 4,
+      "name": "Hard Wood Stick",
+      "description": "Very hard wood, good for forging resilient weapons",
+      "itemTypeId": 4,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 5,
+      "name": "Apple",
+      "description": "A red apple, it looks tasty",
+      "itemTypeId": 5,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 6,
+      "name": "Pork Meat",
+      "description": "A slice of porkchop damn Boy!",
+      "itemTypeId": 5,
+      "itemSubtypeId": 1
+    },
+    {
+      "id": 7,
+      "name": "Wooden Sword",
+      "description": "Basic training sword, all heroes weild it before you",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1,
+      "bodyPartId": 2
+    },
+    {
+      "id": 8,
+      "name": "Iron Sword",
+      "description": "Standard sword for a militia",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1,
+      "bodyPartId": 2
+    },
+    {
+      "id": 9,
+      "name": "Steel Sword",
+      "description": "A sharp and durable sword, the friend of every warrior",
+      "itemTypeId": 1,
+      "itemSubtypeId": 1,
+      "bodyPartId": 2
+    },
+    {
+      "id": 10,
+      "name": "Steel War Hammer",
+      "description": "A mass of steel attached to a stick, crush your enemies with might",
+      "itemTypeId": 1,
+      "itemSubtypeId": 2
+    },
+    {
+      "id": 11,
+      "name": "Wow",
+      "description": "A mass of steel attached to a stick, crush your enemies with might",
+      "itemTypeId": 8,
+      "itemSubtypeId": 2
+    },
+    {
+      "id": 12,
+      "name": "Rookie Helmet",
+      "description": "A rookie helmet for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11,
+      "bodyPartId": 3
+    },
+    {
+      "id": 13,
+      "name": "Rookie plate armor",
+      "description": "A armor for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11,
+      "bodyPartId": 4
+    },
+    {
+      "id": 14,
+      "name": "Rookie guantlets",
+      "description": "A rookie guantlet for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11,
+      "bodyPartId": 5
+    },
+    {
+      "id": 15,
+      "name": "Rookie plate pants",
+      "description": "A rookie pants for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11,
+      "bodyPartId": 6
+    },
+    {
+      "id": 16,
+      "name": "Rookie trining boots",
+      "description": "A rookie's Boots for training.",
+      "itemTypeId": 2,
+      "itemSubtypeId": 11,
+      "bodyPartId": 7
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "Sword",
+      "description": "Sword's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 2,
+      "name": "Hammer",
+      "description": "Hammer's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 3,
+      "name": "Ore",
+      "description": "Ore's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 4,
+      "name": "Ingot",
+      "description": "Ingot's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 5,
+      "name": "Wood",
+      "description": "Wood's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 6,
+      "name": "Processed wood",
+      "description": "Processed wood's description",
+      "itemTypeId": 4
+    },
+    {
+      "id": 7,
+      "name": "Bow",
+      "description": "Bow's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 8,
+      "name": "Mace",
+      "description": "Mace's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 9,
+      "name": "Spear",
+      "description": "Spear's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 10,
+      "name": "Crossbow",
+      "description": "Crossbow's description",
+      "itemTypeId": 1
+    },
+    {
+      "id": 11,
+      "name": "Light armor",
+      "description": "Light armor's description",
+      "itemTypeId": 2
+    },
+    {
+      "id": 12,
+      "name": "Medium armor",
+      "description": "Medium armor's description",
+      "itemTypeId": 2
+    },
+    {
+      "id": 13,
+      "name": "Heavy armor",
+      "description": "Heavy armor's description",
+      "itemTypeId": 2
+    }
+  ]
+}

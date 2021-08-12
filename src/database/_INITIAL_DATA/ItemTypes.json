@@ -1,0 +1,52 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "Weapon",
+      "description": "Weapon's description",
+      "icon": "🗡️"
+    },
+    {
+      "id": 2,
+      "name": "Armor",
+      "description": "Armor's description",
+      "icon": "🛡️"
+    },
+    {
+      "id": 3,
+      "name": "Accesory",
+      "description": "Accesory's description",
+      "icon": "💍"
+    },
+    {
+      "id": 4,
+      "name": "Material",
+      "description": "Material's description",
+      "icon": "🧱"
+    },
+    {
+      "id": 5,
+      "name": "Food",
+      "description": "Food's description",
+      "icon": "🍜"
+    },
+    {
+      "id": 6,
+      "name": "Tool",
+      "description": "Tool's description",
+      "icon": "⛏️"
+    },
+    {
+      "id": 7,
+      "name": "Utility",
+      "description": "Utility's description",
+      "icon": "🧪"
+    },
+    {
+      "id": 8,
+      "name": "Key",
+      "description": "Key's description",
+      "icon": "🔑"
+    }
+  ]
+}

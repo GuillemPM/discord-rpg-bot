@@ -1,0 +1,46 @@
+{
+  "list": [
+    {
+      "id": "168135318879338497",
+      "username": "Agallas",
+      "connected": true,
+      "experience": 200,
+      "mainStats": {
+        "strength": 0,
+        "dexterity": 0,
+        "intelligence": 0,
+        "constitution": 0
+      },
+      "advancedStats": {
+        "hp": 100,
+        "mp": 100,
+        "physicDmg": 20,
+        "magicDmg": 20,
+        "speed": 10,
+        "evasionPct": 1.5,
+        "weigth": 50
+      }
+    },
+    {
+      "id": "134642397530423296",
+      "username": "Pepa la puta gorda",
+      "connected": true,
+      "experience": 500,
+      "mainStats": {
+        "strength": 0,
+        "dexterity": 0,
+        "intelligence": 0,
+        "constitution": 0
+      },
+      "advancedStats": {
+        "hp": 100,
+        "mp": 100,
+        "physicDmg": 20,
+        "magicDmg": 20,
+        "speed": 10,
+        "evasionPct": 1.5,
+        "weigth": 50
+      }
+    }
+  ]
+}
