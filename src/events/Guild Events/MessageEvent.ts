@@ -15,7 +15,7 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
   const avatar: Avatar = await Avatar.findByPk(message.author.id);
 
-  if (!avatar && (command.name !== 'start')) {
+  if (!avatar && (command.name !== 'start' && command.name !== 'welcome')) {
     return message.channel.send('Debes crear un avatar primero')
   }
 

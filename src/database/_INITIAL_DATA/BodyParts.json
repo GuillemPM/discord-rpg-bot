@@ -1,0 +1,69 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "Left hand weapon",
+      "description": "a"
+    },
+    {
+      "id": 2,
+      "name": "Right hand weapon",
+      "description": "a"
+    },
+    {
+      "id": 3,
+      "name": "Head",
+      "description": "a"
+    },
+    {
+      "id": 4,
+      "name": "Chest",
+      "description": "a"
+    },
+    {
+      "id": 5,
+      "name": "Hands",
+      "description": "a"
+    },
+    {
+      "id": 6,
+      "name": "Legs",
+      "description": "a"
+    },
+    {
+      "id": 7,
+      "name": "Feet",
+      "description": "a"
+    },
+    {
+      "id": 8,
+      "name": "Left ear",
+      "description": "a"
+    },
+    {
+      "id": 9,
+      "name": "Right ear",
+      "description": "a"
+    },
+    {
+      "id": 10,
+      "name": "Left hand finger",
+      "description": "a"
+    },
+    {
+      "id": 11,
+      "name": "Right hand finger",
+      "description": "a"
+    },
+    {
+      "id": 12,
+      "name": "Neck",
+      "description": "a"
+    },
+    {
+      "id": 13,
+      "name": "Waist",
+      "description": "a"
+    }
+  ]
+}

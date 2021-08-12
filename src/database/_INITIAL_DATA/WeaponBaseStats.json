@@ -1,0 +1,22 @@
+{
+  "list": [
+    {
+      "itemId": 1,
+      "physicDmg": 5,
+      "magicDmg": 0,
+      "speed": 0
+    },
+    {
+      "itemId": 7,
+      "physicDmg": 10,
+      "magicDmg": 0,
+      "speed": 0
+    },
+    {
+      "itemId": 8,
+      "physicDmg": 20,
+      "magicDmg": 0,
+      "speed": 0
+    }
+  ]
+}
