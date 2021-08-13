@@ -30,7 +30,7 @@ export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsC
         defaultValue: 100
       },
       missingHp: {
-        type: new DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0
       },
