@@ -5,10 +5,19 @@ import { AdvancedStats } from './database/AdvancedStats/Model/AdvancedStats'
 import { Item } from './database/Item/Model/Item'
 import consola from "consola";
 import { ItemType } from './database/ItemType/Model/ItemType';
-import * as initData from './dbInitData.json';
+//import * as initData from './dbInitData.json';
 import { ItemSubtype } from './database/ItemSubtype/Model/ItemSubtype';
 import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStats';
 import { Inventory } from './database/Inventory/Model/Inventory';
+import { Gear } from './database/Gear/Model/Gear';
+import { BodyPart } from './database/BodyPart/Model/BodyPart';
+import * as Avatars from './database/_INITIAL_DATA/Avatars.json';
+import * as BodyParts from './database/_INITIAL_DATA/BodyParts.json';
+import * as Inventories from './database/_INITIAL_DATA/Inventories.json';
+import * as Items from './database/_INITIAL_DATA/Items.json';
+import * as ItemSubtypes from './database/_INITIAL_DATA/ItemSubtypes.json';
+import * as ItemTypes from './database/_INITIAL_DATA/ItemTypes.json';
+import * as WeaponBaseStatss from './database/_INITIAL_DATA/WeaponBaseStats.json';
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -20,7 +29,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory]
+const models = [BodyPart, Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory, Gear]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -132,8 +141,12 @@ sequelize.sync({ force })
   .then(async () => {
 
     if (force) {
+      await BodyPart.bulkCreate(
+        JSON.parse(JSON.stringify(BodyParts.list))
+      )
+
       await Avatar.bulkCreate(
-        JSON.parse(JSON.stringify(initData.avatar)),
+        JSON.parse(JSON.stringify(Avatars.list)),
         {
           include: [{
             model: MainStats,
@@ -147,27 +160,38 @@ sequelize.sync({ force })
       )
 
       await ItemType.bulkCreate(
-        JSON.parse(JSON.stringify(initData.itemType))
+        JSON.parse(JSON.stringify(ItemTypes.list))
       )
 
       await ItemSubtype.bulkCreate(
-        JSON.parse(JSON.stringify(initData.itemSubType))
+        JSON.parse(JSON.stringify(ItemSubtypes.list))
       )
 
       await Item.bulkCreate(
-        JSON.parse(JSON.stringify(initData.item))
+        JSON.parse(JSON.stringify(Items.list))
       )
 
       await WeaponBaseStats.bulkCreate(
-        JSON.parse(JSON.stringify(initData.weaponBaseStats))
+        JSON.parse(JSON.stringify(WeaponBaseStatss.list))
       )
 
       await Inventory.bulkCreate(
-        JSON.parse(JSON.stringify(initData.inventory))
+        JSON.parse(JSON.stringify(Inventories.list))
       )
     }
     console.log('Database synced');
   })
   .catch(console.error);
 
-export { Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory }
+export { 
+  Avatar, 
+  MainStats, 
+  AdvancedStats, 
+  ItemType, 
+  ItemSubtype, 
+  Item, 
+  WeaponBaseStats, 
+  Inventory, 
+  Gear,
+  BodyPart
+}

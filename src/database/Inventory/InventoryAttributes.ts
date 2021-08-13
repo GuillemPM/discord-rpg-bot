@@ -6,6 +6,7 @@ export interface InventoryAttributes {
   itemId: number;
   instanceItemGuid: string;
   quantity: number;
+  equiped: boolean;
 }
 
 export interface InventoryCreationAttributes extends Optional<InventoryAttributes, null> { }

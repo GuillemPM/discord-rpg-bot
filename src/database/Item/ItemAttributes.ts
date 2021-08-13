@@ -6,6 +6,7 @@ export interface ItemAttributes {
   description: string;
   itemTypeId: number;
   itemSubtypeId: number;
+  bodyPartId: number;
 }
 
 export interface ItemCreationAttributes extends Optional<ItemAttributes, null> { }
