@@ -5,6 +5,8 @@
       "username": "Agallas",
       "connected": true,
       "experience": 8501,
+      "currentEnergy": 30,
+      "maxEnergy": 30,
       "mainStats": {
         "strength": 0,
         "dexterity": 0,
@@ -28,6 +30,8 @@
       "username": "Pepa la puta gorda",
       "connected": true,
       "experience": 500,
+      "currentEnergy": 30,
+      "maxEnergy": 30,
       "mainStats": {
         "strength": 0,
         "dexterity": 0,

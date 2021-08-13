@@ -9,6 +9,9 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
   public username!: string;
   public connected!: boolean;
   public experience!: number;
+  public currentEnergy!: number;
+  public maxEnergy!: number;
+  public level!: number;
 
   public readonly currentLevel!: number;
   public readonly createdAt!: Date;
@@ -37,6 +40,19 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
           max: 216000
         }
       },
+      currentEnergy: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      maxEnergy: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      level: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1
+      },
       currentLevel: {
         type: DataTypes.VIRTUAL,
         get(this: Avatar): number {
@@ -60,4 +76,10 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
     advancedStats: Association<Avatar, AdvancedStats>;
     gear: Association<Avatar, Gear>;
   };
+
+  public addExperience(this: this, xp: number) {
+    //TODO: Increment level, add fields currentExp, NextLevelExp
+    
+    this.increment('experience', {by: xp})
+  }
 };

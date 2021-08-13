@@ -20,7 +20,7 @@ export class Avatar implements Command {
     console.log(avatarMainValues)
     const msgEmbed: MessageEmbed = new MessageEmbed()
       .setColor(3447003)
-      .setThumbnail(message.author.displayAvatarURL())
+      .setThumbnail('https://i.imgur.com/6etwdRa.png')
       .setAuthor(`${avatarMainValues.username}'s profile`, message.author.displayAvatarURL())
       .setTitle(space)
       .addFields(
@@ -100,6 +100,21 @@ export class Avatar implements Command {
         {
           name: `✨ Magic dmg.`,
           value: `\`${avatarMainValues.advancedStats.magicDmg}\``,
+          inline: true
+        },
+        {
+          name: space,
+          value: space,
+          inline: true
+        },
+        {
+          name: `🎯 Crit. chance %`,
+          value: `\`0\``,
+          inline: true
+        },
+        {
+          name: `💥 Crit. dmg. %`,
+          value: `\`0\``,
           inline: true
         },
         {

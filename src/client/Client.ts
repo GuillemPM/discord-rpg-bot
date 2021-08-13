@@ -23,7 +23,7 @@ class Bot extends Client {
     this.login(this.configOptions.token);
 
     const commandFiles: string[] = await globPromise(`${__dirname}/../commands/**/*{.ts,.js}`, { ignore: [`${__dirname}/../commands/**/subcommands/**/*{.ts,.js}`]});
-    console.log(commandFiles)
+
     commandFiles.map(async (value: string) => {
       const { name } = parse(value)
       const file: Command = new (await import(value))[name[0].toUpperCase() + name.substring(1)]();

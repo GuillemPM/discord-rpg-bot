@@ -6,6 +6,9 @@ export interface AvatarAttributes {
   connected: boolean;
   experience: number;
   currentLevel: number;
+  currentEnergy: number;
+  maxEnergy: number;
+  level: number;
 }
 
 export interface AvatarCreationAttributes extends Optional<AvatarAttributes, 'connected'> { }
