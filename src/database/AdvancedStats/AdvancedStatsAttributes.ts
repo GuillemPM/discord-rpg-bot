@@ -4,6 +4,8 @@ export interface AdvancedStatsAttributes {
   avatarId: string;
   hp: number;
   mp: number;
+  missingHp: number;
+  missingMp: number;
   physicDmg: number;
   magicDmg: number;
   speed: number;
