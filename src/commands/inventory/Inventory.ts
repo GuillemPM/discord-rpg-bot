@@ -1,10 +1,7 @@
 import { Collection, CollectorFilter, Message, MessageEmbed, MessageReaction, User } from "discord.js";
 import { Bot } from "../../client/Client";
-import { Item } from "../../database/Item/Model/Item";
+import { Avatar, Inventory as InventoryModel, Item, ItemType } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
-import { Avatar } from "../../database/Avatar/Model/Avatar";
-import { Inventory as InventoryModel } from "../../database/Inventory/Model/Inventory";
-import { ItemType } from "../../database/ItemType/Model/ItemType";
 import Table from "easy-table";
 
 export class Inventory implements Command {

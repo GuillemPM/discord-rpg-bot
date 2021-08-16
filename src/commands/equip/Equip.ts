@@ -1,8 +1,7 @@
 import { Collection, CollectorFilter, Message, MessageEmbed, MessageReaction, User } from "discord.js";
 import { Bot } from "../../client/Client";
 import { BodyPartEnum } from "../../database/BodyPart/BodyPartEnum";
-import { WeaponBaseStats } from "../../database/WeaponBaseStats/Model/WeaponBaseStats";
-import { Inventory, Item, Gear } from "../../dbInit";
+import { Inventory, Item, Gear, WeaponBaseStats } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
 import { table, TableUserConfig } from 'table';
 

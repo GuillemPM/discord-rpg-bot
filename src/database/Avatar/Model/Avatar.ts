@@ -1,6 +1,8 @@
-import { Association, DataTypes, HasManyCreateAssociationMixin, Model, Sequelize } from 'sequelize';
+import { Association, DataTypes, Model, Sequelize } from 'sequelize';
 import { AdvancedStats } from '../../AdvancedStats/Model/AdvancedStats';
 import { Gear } from '../../Gear/Model/Gear';
+import { MainStatsAttributes } from '../../MainStats/MainStatsAttributes';
+import { getAdvancedStatsToIncrement } from '../../MainStats/MainStatsMapper';
 import { MainStats } from '../../MainStats/Model/MainStats';
 import { AvatarAttributes, AvatarCreationAttributes } from '../AvatarAttributes';
 
@@ -8,12 +10,14 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
   public id!: string;
   public username!: string;
   public connected!: boolean;
-  public experience!: number;
   public currentEnergy!: number;
   public maxEnergy!: number;
   public level!: number;
+  public totalExp!: number;
+  public requiredExp!: number;
+  public assignedAttributePoints!: number;
+  public attributePoints!: number;
 
-  public readonly currentLevel!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
@@ -32,14 +36,6 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
         allowNull: false,
         defaultValue: false
       },
-      experience: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-          min: 0,
-          max: 216000
-        }
-      },
       currentEnergy: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -53,14 +49,29 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
         allowNull: false,
         defaultValue: 1
       },
-      currentLevel: {
-        type: DataTypes.VIRTUAL,
-        get(this: Avatar): number {
-          return Math.floor(Math.pow(this.getDataValue('experience'), 1/3)) || 1
-        },
-        set(){
-          throw Error('a');          
+      totalExp: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
+      requiredExp: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      assignedAttributePoints: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          isLessOrEqualThanAttributePoints(value: number) {
+            if (value < 0 || value > this.attributePoints) {
+              throw new Error('Bar must be greater than otherField.');
+            }
+          }
         }
+      },
+      attributePoints: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     },{
         sequelize
@@ -77,9 +88,57 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
     gear: Association<Avatar, Gear>;
   };
 
-  public addExperience(this: this, xp: number) {
-    //TODO: Increment level, add fields currentExp, NextLevelExp
+  public addAttributePoint = (name: string, points: number) => {
+    const avatar: Avatar = <Avatar>this.get({ plain: true })
     
-    this.increment('experience', {by: xp})
+    Avatar.increment({ 
+      assignedAttributePoints: points
+    },
+      {
+        where: {
+        id: avatar.id
+      }
+    })
+
+    MainStats.increment(<keyof MainStatsAttributes>name, {
+      by: points,
+      where: {
+        avatarId: avatar.id
+      }
+    })
+    .then(() => {
+      getAdvancedStatsToIncrement(name).map((value, key) => {
+        AdvancedStats.increment(key, {
+          by: points * value,
+          where: {
+            avatarId: avatar.id
+          }
+        })
+      })
+    })
+  } 
+
+  public addExperience(this: this, xp: number) {
+    const avatar: Avatar = <Avatar>this.get({ plain: true })
+
+    avatar.totalExp += xp;
+
+    while (avatar.totalExp >= avatar.requiredExp) {
+      avatar.level++;
+      avatar.requiredExp = Math.pow(avatar.level + 1, 3)
+       avatar.attributePoints += 4;
+    }
+
+    Avatar.update({ 
+      level: avatar.level,
+      totalExp: avatar.totalExp,
+      requiredExp: avatar.requiredExp,
+      attributePoints: avatar.attributePoints
+    },
+      {
+        where: {
+        id: avatar.id
+      }
+    })
   }
 };

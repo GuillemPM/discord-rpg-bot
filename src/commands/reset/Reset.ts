@@ -1,6 +1,6 @@
 import { Collection, CollectorFilter, Message, MessageEmbed, MessageReaction, User } from "discord.js";
 import { Bot } from "../../client/Client";
-import { Avatar } from "../../database/Avatar/Model/Avatar";
+import { Avatar } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command'
 
 export class Reset implements Command {

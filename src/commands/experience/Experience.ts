@@ -1,6 +1,6 @@
 import { Collection, Message, MessageEmbed } from "discord.js";
 import { Bot } from "../../client/Client";
-import { Avatar } from "../../database/Avatar/Model/Avatar";
+import { Avatar } from "../../dbInit";
 import { Command, RunFunction } from "../../interfaces/Command";
 
 export class Experience implements Command {
@@ -12,11 +12,9 @@ export class Experience implements Command {
 
   public run: RunFunction = async (client: Bot, message: Message, args: string[]) => {
 
-    const avatar = await Avatar.findByPk(message.author.id, { raw: false});
-
-    avatar.addExperience(1);
-
-    console.log(avatar)
+    const avatar = await Avatar.findByPk(message.author.id, { raw: false });
+    //avatar.update({totalExp: 10})
+    avatar.addExperience(parseInt(args[0]));
 
   }
   
