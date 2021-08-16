@@ -6,8 +6,8 @@ import { MainStats, AdvancedStats, Avatar } from "../../../dbInit";
 import { Command, RunFunction } from '../../../interfaces/Command'
 
 export class Assign implements Command {
-  public name: string = 'Assign';
-  public description: string = 'Asigna tus atributos!';
+  public name: string = 'assign';
+  public description: string = 'Use the command \`assign\` to increase your atribute stats. \n \`<attributes assign attribute_name number>\`';
   public aliases: string[] = ['a'];
   public permisions: number = 1;
   public subcommands: Collection<string, Command> = new Collection();

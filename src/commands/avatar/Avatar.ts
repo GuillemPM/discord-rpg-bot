@@ -5,8 +5,8 @@ import { Avatar as AvatarModel, MainStats, AdvancedStats } from "../../dbInit";
 import { Command } from '../../interfaces/Command';
 
 export class Avatar implements Command {
-  public name: string = 'Avatar';
-  public description: string = 'Use the r!avatar command to display your character info!';
+  public name: string = 'avatar';
+  public description: string = 'Use the \`r!avatar\` command to display your character info!';
   public aliases: string[] = ['me', 'a','avtr'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

@@ -7,7 +7,7 @@ import { MainStats } from "../../../dbInit";
 import { Command, RunFunction } from '../../../interfaces/Command'
 
 export class Assign implements Command {
-  public name: string = 'Assign';
+  public name: string = 'assign';
   public description: string = 'Asigna tus stats!';
   public aliases: string[] = ['a'];
   public permisions: number = 1;

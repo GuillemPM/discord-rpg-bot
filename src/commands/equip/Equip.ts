@@ -6,7 +6,7 @@ import { Command, RunFunction } from '../../interfaces/Command';
 import { table, TableUserConfig } from 'easy-table';
 
 export class Equip implements Command {
-  public name: string = 'Equip';
+  public name: string = 'equip';
   public description: string = 'Use this command to equip items \`r!equip <Item number>\`';
   public aliases: string[] = ['e', 'eq'];
   public permisions: number = 0;

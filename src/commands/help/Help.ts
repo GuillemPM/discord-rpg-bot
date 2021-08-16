@@ -3,8 +3,8 @@ import { Bot } from "../../client/Client";
 import { Command, RunFunction } from "../../interfaces/Command";
 
 export class Help implements Command {
-  public name: string = 'Help';
-  public description: string = 'Use r!help for displaying all commands that you can use';
+  public name: string = 'help';
+  public description: string = 'Use \`r!help\` for displaying all commands that you can use';
   public aliases: string[] = ['h'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

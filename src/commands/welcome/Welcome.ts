@@ -3,8 +3,8 @@ import { Bot } from "../../client/Client";
 import { Command, RunFunction } from '../../interfaces/Command'
 
 export class Welcome implements Command {
-  public name: string = 'Welcome';
-  public description: string = 'Comienza tu aventura!';
+  public name: string = 'welcome';
+  public description: string = 'Use \`r!welcome\` to start your journey!';
   public aliases: string[] = ['w', 'wc'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

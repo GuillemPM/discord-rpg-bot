@@ -4,8 +4,8 @@ import { Avatar, AdvancedStats, MainStats } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
 
 export class Stats implements Command {
-  public name: string = 'Stats';
-  public description: string = 'Asigna tus stats!';
+  public name: string = 'stats';
+  public description: string = 'Use r!stats to check your stats';
   public aliases: string[] = ['s'];
   public permisions: number = 1;
   public subcommands: Collection<string, Command> = new Collection();

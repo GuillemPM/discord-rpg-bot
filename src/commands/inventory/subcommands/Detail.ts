@@ -4,8 +4,8 @@ import { Inventory, Item, ItemType } from "../../../dbInit";
 import { Command, RunFunction } from "../../../interfaces/Command";
 
 export class Detail implements Command {
-  public name: string = 'Detail';
-  public description: string = 'Use r!inventory to check yout character inventory detail <Item Number>';
+  public name: string = 'detail';
+  public description: string = 'Use r!inventory to check yout character \`<inventory detail Item_Number>\`';
   public aliases: string[] = ['d', 'dt'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();
