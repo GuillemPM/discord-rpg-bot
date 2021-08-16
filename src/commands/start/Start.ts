@@ -4,7 +4,7 @@ import { Command, RunFunction } from "../../interfaces/Command";
 import { AdvancedStats, Avatar, MainStats } from "../../dbInit";
 
 export class Start implements Command {
-	public name: string = 'start';
+	public name: string = 'Start';
   public description: string = 'Use r!start to start for first time your journey!';
   public aliases: string[] = ['s', 'st'];
   public permisions: number = 0;

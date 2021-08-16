@@ -4,7 +4,7 @@ import { Avatar, AdvancedStats, MainStats } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
 
 export class Stats implements Command {
-  public name: string = 'stats';
+  public name: string = 'Stats';
   public description: string = 'Asigna tus stats!';
   public aliases: string[] = ['s'];
   public permisions: number = 1;

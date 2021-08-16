@@ -3,11 +3,11 @@ import { Bot } from "../../client/Client";
 import { BodyPartEnum } from "../../database/BodyPart/BodyPartEnum";
 import { Inventory, Item, Gear, WeaponBaseStats } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
-import { table, TableUserConfig } from 'table';
+import { table, TableUserConfig } from 'easy-table';
 
 export class Equip implements Command {
-  public name: string = 'equip';
-  public description: string = 'Equip';
+  public name: string = 'Equip';
+  public description: string = 'Use this command to equip items \`r!equip <Item number>\`';
   public aliases: string[] = ['e', 'eq'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

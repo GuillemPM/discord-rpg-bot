@@ -5,8 +5,8 @@ import { Command, RunFunction } from '../../interfaces/Command';
 import Table from "easy-table";
 
 export class Inventory implements Command {
-  public name: string = 'inventory';
-  public description: string = 'Use r!inventory to check yout character inventory detail <Item Number>';
+  public name: string = 'Inventory';
+  public description: string = 'Use r!inventory to check your character\'s inventory';
   public aliases: string[] = ['i', 'inv'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();
