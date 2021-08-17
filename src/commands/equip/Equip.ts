@@ -3,7 +3,7 @@ import { Bot } from "../../client/Client";
 import { BodyPartEnum } from "../../database/BodyPart/BodyPartEnum";
 import { Inventory, Item, Gear, WeaponBaseStats } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
-import { table, TableUserConfig } from 'easy-table';
+import { table, TableUserConfig } from 'table';
 
 export class Equip implements Command {
   public name: string = 'equip';

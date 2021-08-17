@@ -11,8 +11,9 @@ export class Help implements Command {
 
   public run: RunFunction = async (client: Bot, message: Message, args: string[]) => {
     if(!args.length){
+
       const msg = new MessageEmbed()
-        .setColor('#0099ff')
+        .setColor('#cd7f32')
         .setTitle('Check te commands!')
         .setURL('https://discord.com')
     
@@ -26,15 +27,24 @@ export class Help implements Command {
       if(client.commands.has(args[0])){
         const cmd : Command = client.commands.get(args[0])
         
+        let subcommandsDescription: string = '';
+        cmd.subcommands.forEach(scmd => {
+          subcommandsDescription = subcommandsDescription.concat(`**${scmd.name}**: ${scmd.description}\nAliases: \`${scmd.aliases.join(', ')}\``)
+        })
+
+        let cmdTitle: string = `━━ ${cmd.name[0].toUpperCase() + cmd.name.slice(1)} `;
+        
+        for( let i = 0; i < 14 - Math.round(cmd.name.length / 5); i++) {
+          cmdTitle = cmdTitle.concat('━')
+        }
+
+
         const msg = new MessageEmbed()
           .setColor('#0099ff')
-          .setTitle(`${cmd.name}`)
+          .setTitle(cmdTitle)
           .setURL('https://discord.com')
-          .setDescription(`${cmd.description}`)
-           
-        cmd.subcommands.forEach(scmd => {
-          msg.addField(`Subcommand: \`${scmd.name}\``, `${scmd.description}`)
-        })
+          .setDescription(`${cmd.description}${ cmd.subcommands ? `\n\n▫**Subcommands**▫\n${subcommandsDescription}`: ''}`)
+        
         return message.channel.send(msg)
       }else{
         const msg = new MessageEmbed()

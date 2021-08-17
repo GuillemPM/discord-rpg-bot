@@ -7,7 +7,7 @@ import { Command, RunFunction } from '../../../interfaces/Command'
 
 export class Assign implements Command {
   public name: string = 'assign';
-  public description: string = 'Use the command \`assign\` to increase your atribute stats. \n \`<attributes assign attribute_name number>\`';
+  public description: string = 'Use \`assign\` to increase your attribute stats. \n \`r!attributes assign <attribute_name> <points>\`';
   public aliases: string[] = ['a'];
   public permisions: number = 1;
   public subcommands: Collection<string, Command> = new Collection();
