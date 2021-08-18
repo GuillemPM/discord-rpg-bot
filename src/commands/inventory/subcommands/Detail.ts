@@ -1,5 +1,4 @@
 import { Collection, Message, MessageEmbed } from "discord.js";
-import { isNull } from "node:util";
 import { Bot } from "../../../client/Client";
 import { Inventory, Item, ItemType } from "../../../dbInit";
 import { Command, RunFunction } from "../../../interfaces/Command";
