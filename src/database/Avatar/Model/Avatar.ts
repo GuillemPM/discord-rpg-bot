@@ -1,5 +1,6 @@
-import { Association, DataTypes, Model, Sequelize } from 'sequelize';
+import { Association, DataTypes, HasManyCreateAssociationMixin, Model, Sequelize } from 'sequelize';
 import { AdvancedStats } from '../../AdvancedStats/Model/AdvancedStats';
+import { Gear } from '../../Gear/Model/Gear';
 import { MainStats } from '../../MainStats/Model/MainStats';
 import { AvatarAttributes, AvatarCreationAttributes } from '../AvatarAttributes';
 
@@ -7,7 +8,9 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
   public id!: string;
   public username!: string;
   public connected!: boolean;
+  public experience!: number;
 
+  public readonly currentLevel!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
@@ -25,16 +28,36 @@ export class Avatar extends Model<AvatarAttributes, AvatarCreationAttributes> im
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false
+      },
+      experience: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          min: 0,
+          max: 216000
+        }
+      },
+      currentLevel: {
+        type: DataTypes.VIRTUAL,
+        get(this: Avatar): number {
+          return Math.floor(Math.pow(this.getDataValue('experience'), 1/3)) || 1
+        },
+        set(){
+          throw Error('a');          
+        }
       }
-    },
-    { sequelize });
+    },{
+        sequelize
+      });
   }
-
+  
   public readonly mainStats: MainStats;
   public readonly advancedStats: AdvancedStats;
+  public readonly gear: Gear;
 
   public static associations: {
     mainStats: Association<Avatar, MainStats>;
     advancedStats: Association<Avatar, AdvancedStats>;
+    gear: Association<Avatar, Gear>;
   };
 };

@@ -2,48 +2,67 @@ import { Association, DataTypes, Model, Sequelize } from 'sequelize';
 import { AdvancedStatsAttributes, AdvancedStatsCreationAttributes } from '../AdvancedStatsAttributes';
 
 export class AdvancedStats extends Model<AdvancedStatsAttributes, AdvancedStatsCreationAttributes> implements AdvancedStatsAttributes {
-  public avatar_id!: string;
+  public avatarId!: string;
   public hp!: number;
   public mp!: number;
-  public physic_dmg!: number;
-  public magic_dmg!: number;
+  public missingHp: number;
+  public missingMp: number;
+  public physicDmg!: number;
+  public magicDmg!: number;
   public speed!: number;
-  public evasion_pct!: number;
+  public evasionPct!: number;
   public weight!: number;
 
   public static initialize(sequelize: Sequelize) {
     this.init({
-      avatar_id: {
+      avatarId: {
         type: DataTypes.STRING,
         primaryKey: true,
       },
       hp: {
         type: new DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 100
       },
       mp: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 100
       },
-      physic_dmg: {
+      missingHp: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 0
       },
-      magic_dmg: {
+      missingMp: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 0
+      },
+      physicDmg: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 20
+      },
+      magicDmg: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 20,
       },
       speed: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 10
       },
-      evasion_pct: {
+      evasionPct: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 1.5
       },
       weight: {
         type: DataTypes.DECIMAL,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 50
       }
     },
     { sequelize });

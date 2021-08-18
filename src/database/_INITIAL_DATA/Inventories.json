@@ -1,0 +1,236 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "avatarId": "168135318879338497",
+      "itemId": 9,
+      "instanceItemGuid": "8ea3d664-81fd-4b39-9021-aff476682e9a",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 2,
+      "avatarId": "168135318879338497",
+      "itemId": 8,
+      "instanceItemGuid": "137d6c8b-a5bf-4860-976e-c61d65e5a504",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 3,
+      "avatarId": "168135318879338497",
+      "itemId": 10,
+      "instanceItemGuid": "940c7bb2-6356-479b-b6ce-bdd1bbc53506",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 4,
+      "avatarId": "168135318879338497",
+      "itemId": 3,
+      "instanceItemGuid": "6019d271-03ab-42e3-bc42-95a66c4b1f67",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 5,
+      "avatarId": "168135318879338497",
+      "itemId": 12,
+      "instanceItemGuid": "493198d4-045f-4d0c-b5e4-cf9eb006c8e5",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 6,
+      "avatarId": "168135318879338497",
+      "itemId": 13,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 7,
+      "avatarId": "168135318879338497",
+      "itemId": 14,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 8,
+      "avatarId": "168135318879338497",
+      "itemId": 15,
+      "instanceItemGuid": "98980763-7157-4cf4-b987-3df456908306",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 9,
+      "avatarId": "168135318879338497",
+      "itemId": 16,
+      "instanceItemGuid": "7151d97b-97ee-420d-882a-4c9db1b2d9b5",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 1,
+      "avatarId": "134642397530423296",
+      "itemId": 8,
+      "instanceItemGuid": "85798a2c-3475-4117-b5ab-c5be8dabe063",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 2,
+      "avatarId": "134642397530423296",
+      "itemId": 10,
+      "instanceItemGuid": "b36ae848-5ea5-417b-84e5-76853e8ec170",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 3,
+      "avatarId": "134642397530423296",
+      "itemId": 3,
+      "instanceItemGuid": "f04fdacc-5b7d-42df-b9a7-a7591bca9eeb",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 4,
+      "avatarId": "134642397530423296",
+      "itemId": 11,
+      "instanceItemGuid": "d9cdf882-927e-496a-9907-3d42ed7ac04b",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 5,
+      "avatarId": "134642397530423296",
+      "itemId": 10,
+      "instanceItemGuid": "5a387348-d4d4-424f-96aa-41012cc433e6",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 6,
+      "avatarId": "134642397530423296",
+      "itemId": 3,
+      "instanceItemGuid": "8cb763c8-5e7b-4ef5-afaf-06cac63024c1",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 7,
+      "avatarId": "134642397530423296",
+      "itemId": 11,
+      "instanceItemGuid": "0cfa82ca-5772-4a4e-ba77-65386a132ebe",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 8,
+      "avatarId": "134642397530423296",
+      "itemId": 1,
+      "instanceItemGuid": "",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 9,
+      "avatarId": "134642397530423296",
+      "itemId": 2,
+      "instanceItemGuid": "",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 10,
+      "avatarId": "134642397530423296",
+      "itemId": 3,
+      "instanceItemGuid": "",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 11,
+      "avatarId": "134642397530423296",
+      "itemId": 4,
+      "instanceItemGuid": "",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 12,
+      "avatarId": "134642397530423296",
+      "itemId": 5,
+      "instanceItemGuid": "",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 13,
+      "avatarId": "134642397530423296",
+      "itemId": 6,
+      "instanceItemGuid": "",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 14,
+      "avatarId": "134642397530423296",
+      "itemId": 7,
+      "instanceItemGuid": "e49a7c7e-5c9d-488d-9e2a-0cc548aad3ce",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 15,
+      "avatarId": "134642397530423296",
+      "itemId": 7,
+      "instanceItemGuid": "b9783f10-df41-4292-9bdc-b9fd93f2bd04",
+      "quantity": 63,
+      "equiped": false
+    },
+    {
+      "id": 16,
+      "avatarId": "134642397530423296",
+      "itemId": 12,
+      "instanceItemGuid": "493198d4-045f-4d0c-b5e4-cf9eb006c8e5",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 17,
+      "avatarId": "134642397530423296",
+      "itemId": 13,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 18,
+      "avatarId": "134642397530423296",
+      "itemId": 14,
+      "instanceItemGuid": "ed65c268-89e8-4ea1-897b-a1f941139227",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 19,
+      "avatarId": "134642397530423296",
+      "itemId": 15,
+      "instanceItemGuid": "98980763-7157-4cf4-b987-3df456908306",
+      "quantity": 1,
+      "equiped": false
+    },
+    {
+      "id": 20,
+      "avatarId": "134642397530423296",
+      "itemId": 16,
+      "instanceItemGuid": "7151d97b-97ee-420d-882a-4c9db1b2d9b5",
+      "quantity": 1,
+      "equiped": false
+    }
+  ]
+}
