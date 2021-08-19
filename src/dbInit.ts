@@ -11,6 +11,7 @@ import { WeaponBaseStats } from './database/WeaponBaseStats/Model/WeaponBaseStat
 import { Inventory } from './database/Inventory/Model/Inventory';
 import { Gear } from './database/Gear/Model/Gear';
 import { BodyPart } from './database/BodyPart/Model/BodyPart';
+import { Mobs } from './database/mobs/Model/mobs';
 import * as Avatars from './database/_INITIAL_DATA/Avatars.json';
 import * as BodyParts from './database/_INITIAL_DATA/BodyParts.json';
 import * as Inventories from './database/_INITIAL_DATA/Inventories.json';
@@ -18,6 +19,7 @@ import * as Items from './database/_INITIAL_DATA/Items.json';
 import * as ItemSubtypes from './database/_INITIAL_DATA/ItemSubtypes.json';
 import * as ItemTypes from './database/_INITIAL_DATA/ItemTypes.json';
 import * as WeaponBaseStatss from './database/_INITIAL_DATA/WeaponBaseStats.json';
+
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   host: 'localhost',
@@ -29,7 +31,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [BodyPart, Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory, Gear]
+const models = [BodyPart, Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory, Gear, Mobs]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
@@ -193,5 +195,6 @@ export {
   WeaponBaseStats, 
   Inventory, 
   Gear,
-  BodyPart
+  BodyPart,
+  Mobs
 }
