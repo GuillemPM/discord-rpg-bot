@@ -15,7 +15,6 @@ export class Avatar implements Command {
     const avatar = await AvatarModel.findByPk(message.author.id, {raw: false, include: [{model: MainStats, as: 'mainStats'},{model: AdvancedStats, as: 'advancedStats'}]});
     const avatarMainValues = <AvatarModel>avatar.get({plain: true});
     const space : string = '\u200B'
-
     const msgEmbed: MessageEmbed = new MessageEmbed()
       .setColor(3447003)
       .setThumbnail('https://i.imgur.com/6etwdRa.png')
