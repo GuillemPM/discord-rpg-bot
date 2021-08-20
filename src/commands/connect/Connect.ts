@@ -1,11 +1,11 @@
 import { Collection, Message, MessageEmbed } from "discord.js";
 import { Bot } from "../../client/Client";
-import { Avatar } from "../../database/Avatar/Model/Avatar";
+import { Avatar } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command'
 
 export class Connect implements Command {
   public name: string = 'connect';
-  public description: string = 'Use the r!connect command to connect to the world! You need to connect first to start or resume yor adventure!';
+  public description: string = 'Use the \`r!connect\` command to connect to the world! You need to connect first to start or resume your adventure!';
   public aliases: string[] = ['c', 'con'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

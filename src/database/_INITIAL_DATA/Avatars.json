@@ -3,8 +3,14 @@
     {
       "id": "168135318879338497",
       "username": "Agallas",
-      "connected": true,
-      "experience": 8501,
+      "connected": false,
+      "currentEnergy": 30,
+      "maxEnergy": 30,
+      "level": 1,
+      "totalExp": 0,
+      "requiredExp": 8,
+      "assignedAttributePoints": 0,
+      "attributePoints": 0,
       "mainStats": {
         "strength": 0,
         "dexterity": 0,
@@ -26,8 +32,14 @@
     {
       "id": "134642397530423296",
       "username": "Pepa la puta gorda",
-      "connected": true,
-      "experience": 500,
+      "connected": false,
+      "currentEnergy": 30,
+      "maxEnergy": 30,
+      "level": 1,
+      "totalExp": 0,
+      "requiredExp": 8,
+      "assignedAttributePoints": 0,
+      "attributePoints": 0,
       "mainStats": {
         "strength": 0,
         "dexterity": 0,

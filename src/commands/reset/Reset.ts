@@ -1,11 +1,11 @@
 import { Collection, CollectorFilter, Message, MessageEmbed, MessageReaction, User } from "discord.js";
 import { Bot } from "../../client/Client";
-import { Avatar } from "../../database/Avatar/Model/Avatar";
+import { Avatar } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command'
 
 export class Reset implements Command {
 	public name: string = 'reset';
-  public description: string = 'Use r!reset to re-establish connection to the world again!';
+  public description: string = 'Use \`r!reset\` to re-establish connection to the world again!';
   public aliases: string[] = ['r', 'res'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

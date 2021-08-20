@@ -1,14 +1,13 @@
 import { Collection, CollectorFilter, Message, MessageEmbed, MessageReaction, User } from "discord.js";
 import { Bot } from "../../client/Client";
 import { BodyPartEnum } from "../../database/BodyPart/BodyPartEnum";
-import { WeaponBaseStats } from "../../database/WeaponBaseStats/Model/WeaponBaseStats";
-import { Inventory, Item, Gear } from "../../dbInit";
+import { Inventory, Item, Gear, WeaponBaseStats } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
 import { table, TableUserConfig } from 'table';
 
 export class Equip implements Command {
   public name: string = 'equip';
-  public description: string = 'Equip';
+  public description: string = 'Use this command to equip items \`r!equip <Item number>\`';
   public aliases: string[] = ['e', 'eq'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();

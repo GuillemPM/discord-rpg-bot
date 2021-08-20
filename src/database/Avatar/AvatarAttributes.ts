@@ -4,8 +4,13 @@ export interface AvatarAttributes {
   id: string;
   username: string;
   connected: boolean;
-  experience: number;
-  currentLevel: number;
+  currentEnergy: number;
+  maxEnergy: number;
+  level: number;
+  totalExp: number;
+  requiredExp: number;
+  assignedAttributePoints: number;
+  attributePoints: number;
 }
 
 export interface AvatarCreationAttributes extends Optional<AvatarAttributes, 'connected'> { }

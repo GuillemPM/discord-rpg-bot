@@ -5,7 +5,7 @@ import { AdvancedStats, Avatar, MainStats } from "../../dbInit";
 
 export class Start implements Command {
 	public name: string = 'start';
-  public description: string = 'Use r!start to start for first time your journey!';
+  public description: string = 'Use \`r!start\` to start for first time your journey!';
   public aliases: string[] = ['s', 'st'];
   public permisions: number = 0;
   public subcommands: Collection<string, Command> = new Collection();
@@ -55,7 +55,13 @@ export class Start implements Command {
 						<Avatar>{ 
 							id: message.author.id, 
 							username: username, 
-							experience: 15278,
+							currentEnergy: 30,
+							maxEnergy: 30,
+							requiredExp: 8,
+							level: 1,
+							totalExp: 0,
+							assignedAttributePoints: 0,
+							attributePoints: 0,
 							mainStats: { 
 								strength: 0, 
 								dexterity: 0, 
