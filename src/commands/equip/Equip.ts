@@ -4,7 +4,7 @@ import { BodyPartEnum } from "../../database/BodyPart/BodyPartEnum";
 import { WeaponBaseStats } from "../../database/WeaponBaseStats/Model/WeaponBaseStats";
 import { Inventory, Item, Gear } from "../../dbInit";
 import { Command, RunFunction } from '../../interfaces/Command';
-import { table, TableUserConfig } from 'easy-table';
+import { table, TableUserConfig } from 'table';
 
 export class Equip implements Command {
   public name: string = 'equip';

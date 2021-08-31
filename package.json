@@ -20,11 +20,13 @@
     "discord.js": "^12.5.3",
     "easy-table": "^1.1.1",
     "glob": "^7.1.7",
+    "random-hash": "^4.0.1",
     "sequelize": "^6.6.5",
     "sqlite3": "^5.0.2",
     "table": "^6.7.1",
     "tslib": "^2.3.0",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.12"
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",

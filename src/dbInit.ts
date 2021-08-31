@@ -12,6 +12,7 @@ import { Inventory } from './database/Inventory/Model/Inventory';
 import { Gear } from './database/Gear/Model/Gear';
 import { BodyPart } from './database/BodyPart/Model/BodyPart';
 import { Mobs } from './database/mobs/Model/mobs';
+import { Combat } from './database/Combat/Model/Combat';
 import * as Avatars from './database/_INITIAL_DATA/Avatars.json';
 import * as BodyParts from './database/_INITIAL_DATA/BodyParts.json';
 import * as Inventories from './database/_INITIAL_DATA/Inventories.json';
@@ -31,7 +32,7 @@ const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
   }
 })
 
-const models = [BodyPart, Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory, Gear, Mobs]
+const models = [BodyPart, Avatar, MainStats, AdvancedStats, ItemType, ItemSubtype, Item, WeaponBaseStats, Inventory, Gear, Mobs, Combat]
 models.forEach(model => model.initialize(sequelize))
 
 const force: boolean = process.argv.includes('--force') || process.argv.includes('-f');
