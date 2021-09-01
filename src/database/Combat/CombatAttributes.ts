@@ -1,4 +1,3 @@
-import { Blob } from "buffer";
 import { Optional } from "sequelize/types";
 
 export interface CombatAttributes {
