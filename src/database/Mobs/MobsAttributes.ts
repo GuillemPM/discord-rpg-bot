@@ -8,6 +8,7 @@ export interface MobsAttributes {
   attack: number;
   defense: number;
   speed: number;
+  type: number;
 }
 
 export interface MobsCreationAttributes extends Optional<Mobs, null> { }

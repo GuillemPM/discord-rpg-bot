@@ -1,0 +1,13 @@
+{
+  "list": [
+    {
+      "id": "1",
+      "mName": "Lil Slime",
+      "hp": 10,
+      "attack": 2,
+      "defence": 0,
+      "speed": 0,
+      "type": 1
+    }
+  ]
+}

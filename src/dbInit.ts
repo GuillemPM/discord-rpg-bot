@@ -21,7 +21,7 @@ import * as Items from './database/_INITIAL_DATA/Items.json';
 import * as ItemSubtypes from './database/_INITIAL_DATA/ItemSubtypes.json';
 import * as ItemTypes from './database/_INITIAL_DATA/ItemTypes.json';
 import * as WeaponBaseStatss from './database/_INITIAL_DATA/WeaponBaseStats.json';
-
+import * as Mob from './database/_INITIAL_DATA/Mobs.json';
 
 
 const sequelize: Sequelize = new Sequelize('database', 'username', 'password', {
@@ -182,6 +182,9 @@ sequelize.sync({ force })
 
       await Inventory.bulkCreate(
         JSON.parse(JSON.stringify(Inventories.list))
+      )
+      await Mobs.bulkCreate(
+        JSON.parse(JSON.stringify(Mob.list))
       )
     }
     console.log('Database synced');

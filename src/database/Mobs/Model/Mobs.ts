@@ -8,6 +8,7 @@ export class Mobs extends Model< MobsAttributes,MobsCreationAttributes > impleme
   public attack!: number;
   public defense!: number;
   public speed!: number;
+  public type!: number;
 
   public static initialize(sequelize: Sequelize) {
     this.init({
@@ -39,6 +40,10 @@ export class Mobs extends Model< MobsAttributes,MobsCreationAttributes > impleme
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0
+      },
+      type: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
       }
     },
     {
