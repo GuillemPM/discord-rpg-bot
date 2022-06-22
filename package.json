@@ -18,7 +18,7 @@
     "discord.js": "^12.5.3",
     "glob": "^7.1.7",
     "sequelize": "^6.6.5",
-    "sqlite3": "^5.0.2",
+    "sqlite3": "^5.0.3",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
